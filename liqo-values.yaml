@@ -1,0 +1,25 @@
+tag: "v0.8.0"
+pullPolicy: "IfNotPresent"
+apiServer:
+  address: "$MASTER_URL"
+
+gateway:
+  service:
+    type: "NodePort"
+  metrics:
+    enabled: true
+
+networkManager:
+  config: # values for scaleway kapsule (managed kubernetes)
+    podCIDR: "100.64.0.0/15"
+    serviceCIDR: "10.32.0.0/12"
+
+discovery:
+  config:
+    clusterName: "$CLUSTER_NAME"
+
+telemetry:
+  enable: false
+
+storage:
+  enable: false
